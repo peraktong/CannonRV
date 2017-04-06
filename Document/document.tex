@@ -1,0 +1,117 @@
+\documentclass[11pt, oneside]{article}   	% use "amsart" instead of "article" for AMSLaTeX format
+\usepackage{geometry}                		% See geometry.pdf to learn the layout mixions. There are lots.
+
+\geometry{letterpaper}                   		% ... or a4paper or a5paper or ... 
+%\geometry{landscape}                		% Activate for rotated page geometry
+%\usepackage[parfill]{parskip}    		% Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}				% Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
+								% TeX will automatically convert eps --> pdf in pdflatex		
+\usepackage{amssymb}
+\usepackage{amsmath, amsthm, amssymb, amsfonts}
+
+\usepackage{dcolumn}% Align table columns on decimal point
+\usepackage{bm}% bold math
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{authblk}
+
+\usepackage{amsmath}
+
+\bibliographystyle{abbrv}
+
+
+%SetFonts
+
+%SetFonts
+
+
+\title{CannonRV: Measuring radial velocities with a data-driven spectral model}
+\author[1]{Jason Cao\thanks{jc6933@nyu.edu}}
+\author[2]{David W. hogg\thanks{david.hogg@nyu.edu}}
+\author[3]{Melissa Ness\thanks{ness@mpia-hd.mpg.de}}
+\author[4]{Adrian M. Price-Whelan\thanks{adrn@astro.columbia.edu}}
+
+\affil[1]{Department of Physics,  New York University}
+\affil[2]{NYU Physics - Center for Cosmology and Particle Physics
+NYU Center for Data Science
+Max-Planck-Institut fuer Astronomie }
+\affil[3]{
+Max-Planck-Institut Max-Planck-Institut fuer Astronomie 17, D-69117 Heidelberg, Germany
+}
+\affil[4]{
+Department of Astronomy, Columbia University, 550 W 120th St., New York, NY 10027, USA
+
+}
+
+
+\renewcommand\Authands{ and }
+
+  
+\date{\today}						% Activate to display a given date or no date
+
+
+
+\begin{document}
+\maketitle
+
+%%Okay these look great. Can you write a title and abstract for a possible paper on this? Let's put the method aside for a bit and try to write down what we think we have done, why, and what we have learned, in the form of an abstract.
+
+\section{\label{sec:level1}Abstract}
+
+\begin{flushleft}
+The calculation of spectra radial velocities(RV) plays an important role in stellar spectroscopy. By doing cross-correlation between the data spectra and the spectral template, the radial velocity of each epoch can be derived with high precision and most of the stars have smaller than one pixel shift between individual visits \cite{perez2016aspcap}. As a result, the individual visits for one star do have small but not zero RV shifts between each other. Using the traditional cross-correlation to calibrate shifts smaller than one pixel always involves interpolation, which may smooth the spectra. Thus, people are in badly need of an effective tool for small RV shifts calibration. Here we introduce CannonRV, a new RV calibration tool for small shifts based on the synthesized spectra from the Cannon, which is a data driven spectral model that has been proven to work well in APOGEE DR10 and DR12 data\cite{ness2015cannon}\cite{casey2016cannon}. By assuming the synthesized spectra from the Cannon are at rest, we use these spectra as calibration templates for each visit of every star. First, CannonRV introduces a new spectra, called mixed spectra, which is the linear combination of the Cannon synthesized spectra moving one pixel left, itself and one pixel right. By fitting the mixed spectra to the data spectra using least chi squared fitting\cite{hogg2010data}, CannonRV obtains the mixed spectra and the parameters for it. The mixed spectra is closer to the data spectra than the original Cannon synthesized spectra in aspect of chi-squared. Both the RV shifts and the broadening of the spectra can be derived from these mixed spectral parameters. We apply CannonRV on part of the DR10 and all red clump stars in DR13 and it gives us some promising results, including the RV shifts between individual visits become smaller after the calibration and the spectral broadening becomes bigger as the increase of Fiber ID. The RV calibration results for the red clump stars in DR13, as well as our source code for calculating small RV shift between two spectra are available online.
+\end{flushleft}
+
+\begin{flushleft}
+{\large \bf Key words: The Cannon, least squared ,Centroid shift, small RV shifts, epoch level.}
+\end{flushleft}
+
+\begin{flushleft}
+{\large \bf Supporting material: Source code and binary table of the RV calibration results for the red clump stars in DR13.}
+\end{flushleft}
+
+
+
+%% Both inferring stellar labels ($T_{eff}$, $log\ g$, $[M/H]$) from spectra and generating synthesized spectra from labels
+
+ 
+ %% second paragraph
+ 
+
+ 
+ \section{\label{sec:level1}Assumption and method}
+ 
+503 Service Unavailable
+ 
+% \subsection{\label{sec:level2}Continuum normalization}
+
+
+
+%% Third paragraph
+ 
+ \section{\label{sec:level1}Experiment}
+ 
+503 Service Unavailable
+ 
+% \subsection{\label{sec:level2}Experiment 1}
+
+
+\bigskip 
+
+
+
+{\huge \bf
+
+\begin{center}
+reference
+\end{center}
+}
+
+
+
+\bibliography{citation,pubext} 
+
+
+
+\end{document}  
